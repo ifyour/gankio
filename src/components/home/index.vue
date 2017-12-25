@@ -22,11 +22,11 @@ export default {
     "mt-header": Header,
     "mt-button": Button,
     "mt-loadmore": Loadmore,
-    "all": commonList,
-    "fuli": imgList,
-    "Android": detailList,
-    "iOS": detailList,
-    "fe": detailList,
+    all: commonList,
+    fuli: imgList,
+    Android: detailList,
+    iOS: detailList,
+    fe: detailList,
     "exp-resouce": detailList,
     "rest-video": detailList
   },
@@ -35,26 +35,20 @@ export default {
       handler(curVal) {
         this.contentList = [];
         if (curVal === "all") {
-          this.getList();
         } else if (curVal === "Android") {
           this.type = "Android";
-          this.getList();
         } else if (curVal === "iOS") {
           this.type = "iOS";
-          this.getList();
         } else if (curVal === "fe") {
           this.type = "前端";
-          this.getList();
         } else if (curVal === "exp-resouce") {
           this.type = "拓展资源";
-          this.getList();
         } else if (curVal === "fuli") {
           this.type = "福利";
-          this.getList();
         } else if (curVal === "rest-video") {
           this.type = "休息视频";
-          this.getList();
         }
+        this.getList();
       },
       deep: true
     },
