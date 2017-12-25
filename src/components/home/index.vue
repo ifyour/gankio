@@ -22,13 +22,13 @@ export default {
     "mt-header": Header,
     "mt-button": Button,
     "mt-loadmore": Loadmore,
-    all: commonList,
-    福利: imgList,
-    Android: detailList,
-    iOS: detailList,
-    前端: detailList,
-    拓展资源: detailList,
-    休息视频: detailList
+    "all": commonList,
+    "fuli": imgList,
+    "Android": detailList,
+    "iOS": detailList,
+    "fe": detailList,
+    "exp-resouce": detailList,
+    "rest-video": detailList
   },
   watch: {
     selected: {
@@ -42,16 +42,16 @@ export default {
         } else if (curVal === "iOS") {
           this.type = "iOS";
           this.getList();
-        } else if (curVal === "前端") {
+        } else if (curVal === "fe") {
           this.type = "前端";
           this.getList();
-        } else if (curVal === "拓展资源") {
+        } else if (curVal === "exp-resouce") {
           this.type = "拓展资源";
           this.getList();
-        } else if (curVal === "福利") {
+        } else if (curVal === "fuli") {
           this.type = "福利";
           this.getList();
-        } else if (curVal === "休息视频") {
+        } else if (curVal === "rest-video") {
           this.type = "休息视频";
           this.getList();
         }
@@ -139,13 +139,13 @@ export default {
 		<mt-header fixed :title="topTitle"></mt-header>
 		<div class="nav_wrap">
 			<div class="top_nav">
-				<a class="tab_item" :class="selected === 'all'? 'active' : ''" @click.prevent="selected = 'all'">All</a>
-				<a class="tab_item" :class="selected === 'Android'? 'active' : ''" @click.prevent="selected = 'Android'">Android</a>
-				<a class="tab_item" :class="selected === 'iOS'? 'active' : ''" @click.prevent="selected = 'iOS'">iOS</a>
-				<a class="tab_item" :class="selected === '前端'? 'active' : ''" @click.prevent="selected = '前端'">前端</a>
-				<a class="tab_item" :class="selected === '拓展资源'? 'active' : ''" @click.prevent="selected = '拓展资源'">拓展资源</a>
-				<a class="tab_item" :class="selected === '福利'? 'active' : ''" @click.prevent="selected = '福利'">福利</a>
-				<a class="tab_item" :class="selected === '休息视频'? 'active' : ''" @click.prevent="selected = '休息视频'">休息视频</a>
+				<a class="tab_item" :class="selected === 'all' && 'active'" @click.prevent="selected = 'all'">All</a>
+				<a class="tab_item" :class="selected === 'Android' && 'active'" @click.prevent="selected = 'Android'">Android</a>
+				<a class="tab_item" :class="selected === 'iOS' && 'active'" @click.prevent="selected = 'iOS'">iOS</a>
+				<a class="tab_item" :class="selected === 'fe' &&  'active'" @click.prevent="selected = 'fe'">前端</a>
+				<a class="tab_item" :class="selected === 'exp-resouce' && 'active'" @click.prevent="selected = 'exp-resouce'">拓展资源</a>
+				<a class="tab_item" :class="selected === 'fuli' && 'active'" @click.prevent="selected = 'fuli'">福利</a>
+				<a class="tab_item" :class="selected === 'rest-video' &&  'active'" @click.prevent="selected = 'rest-video'">休息视频</a>
 			</div>
 		</div>
 		<div class="content_wrap">

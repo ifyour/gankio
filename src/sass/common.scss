@@ -1,8 +1,6 @@
 @charset "utf-8";
+@import "./_variate";
 @import "../../node_modules/mixins-sass/src/mixins";
-
-// 设置基准字体大小
-$base-font: 40px;
 
 //避免vue加载的时候出现 {{}}
 [v-cloak] {
