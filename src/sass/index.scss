@@ -1,12 +1,10 @@
 @charset "utf-8";
-@import "./_variate";
 @import "../../node_modules/mixins-sass/src/mixins";
 
 /**
  * [flexbox description] css3伸缩盒
  * @return {[type]} [description]
  */
-
 @mixin flexbox() {
 	display: box;
 	display: -webkit-box;
@@ -22,7 +20,6 @@
  * [hc description] 水平居中
  * @return {[type]} [description]
  */
-
 @mixin flex-hc() {
 	/* 09版 */
 	-webkit-box-pack: center;
@@ -40,7 +37,6 @@
  * [vc description] 垂直居中
  * @return {[type]} [description]
  */
-
 @mixin flex-vc() {
 	/* 09版 */
 	-webkit-box-align: center;
@@ -57,7 +53,6 @@
  * [between description] 两端对齐
  * @return {[type]} [description]
  */
-
 @mixin flex-between() {
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
@@ -74,7 +69,6 @@
  * [between description] 两端对齐
  * @return {[type]} [description]
  */
-
 @mixin flex-around() {
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-around;

@@ -1,6 +1,8 @@
 @charset "utf-8";
-@import "./_variate";
 @import "../../node_modules/mixins-sass/src/mixins";
+
+// 配置 rem 更字体大小, 这里是设计稿尺寸(750px)
+$base-font: 40px;
 
 //避免vue加载的时候出现 {{}}
 [v-cloak] {
