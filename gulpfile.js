@@ -156,7 +156,7 @@ function dev() {
 };
 
 //开发环境
-gulp.task('devs', function () {
+gulp.task('dev', function () {
 	webpackConfig.plugins.push(new webpack.DefinePlugin({
 		NODE_ENV: JSON.stringify(process.env.NODE_ENV) || 'dev'
 	}));

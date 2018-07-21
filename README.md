@@ -11,14 +11,14 @@
 - Webpack
 - Mint-UI
 
-### Geting Stared
+### Getting Stared
 
 ```bash
 # 安装依赖
 $ yarn
 
-# 开发 
-$ gulp devs
+# 开发
+$ gulp dev
 
 # 发布
 $ gulp
