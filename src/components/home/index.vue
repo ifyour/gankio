@@ -1,52 +1,52 @@
 <script>
-import urlServer from "base/ajaxUrl";
-import { Header, Button, Toast, Loadmore, Indicator } from "mint-ui";
-const imgList = resolve => require(["./subComponents/imgList"], resolve);
-const detailList = resolve => require(["./subComponents/detailList"], resolve);
-const commonList = resolve => require(["./subComponents/commonList"], resolve);
+import urlServer from 'base/ajaxUrl';
+import { Header, Button, Toast, Loadmore, Indicator } from 'mint-ui';
+const imgList = resolve => require(['./subComponents/imgList'], resolve);
+const detailList = resolve => require(['./subComponents/detailList'], resolve);
+const commonList = resolve => require(['./subComponents/commonList'], resolve);
 
 export default {
-  name: "index",
+  name: 'index',
   data() {
     return {
-      topTitle: "Gank.io",
-      selected: "all",
+      topTitle: 'Gank.io',
+      selected: 'all',
       contentList: [],
-      allText: "↑ 上拉加载更多",
+      allText: '↑ 上拉加载更多',
       allLoaded: false,
       page: 1,
-      type: ""
+      type: ''
     };
   },
   components: {
-    "mt-header": Header,
-    "mt-button": Button,
-    "mt-loadmore": Loadmore,
-    "all": commonList,
-    "fuli": imgList,
-    "Android": detailList,
-    "iOS": detailList,
-    "fe": detailList,
-    "exp-resouce": detailList,
-    "rest-video": detailList
+    'mt-header': Header,
+    'mt-button': Button,
+    'mt-loadmore': Loadmore,
+    all: commonList,
+    fuli: imgList,
+    Android: detailList,
+    iOS: detailList,
+    fe: detailList,
+    'exp-resouce': detailList,
+    'rest-video': detailList
   },
   watch: {
     selected: {
       handler(curVal) {
         this.contentList = [];
-        if (curVal === "all") {
-        } else if (curVal === "Android") {
-          this.type = "Android";
-        } else if (curVal === "iOS") {
-          this.type = "iOS";
-        } else if (curVal === "fe") {
-          this.type = "前端";
-        } else if (curVal === "exp-resouce") {
-          this.type = "拓展资源";
-        } else if (curVal === "fuli") {
-          this.type = "福利";
-        } else if (curVal === "rest-video") {
-          this.type = "休息视频";
+        if (curVal === 'all') {
+        } else if (curVal === 'Android') {
+          this.type = 'Android';
+        } else if (curVal === 'iOS') {
+          this.type = 'iOS';
+        } else if (curVal === 'fe') {
+          this.type = '前端';
+        } else if (curVal === 'exp-resouce') {
+          this.type = '拓展资源';
+        } else if (curVal === 'fuli') {
+          this.type = '福利';
+        } else if (curVal === 'rest-video') {
+          this.type = '休息视频';
         }
         this.getList();
       },
@@ -59,39 +59,39 @@ export default {
   mounted() {
     this.allLoaded = false;
     this.page = 1;
-    this.type = "content";
+    this.type = 'content';
     this.getList();
   },
   methods: {
     /**
-			 * [getList description]获取列表数据
-			 * @return {[type]} [description]
-			 */
+     * [getList description]获取列表数据
+     * @return {[type]} [description]
+     */
     getList(page, type) {
       Indicator.open({
-        text: "加载中...",
-        spinnerType: "fading-circle"
+        text: '加载中...',
+        spinnerType: 'fading-circle'
       });
       page = page || 1;
-      let url = "";
-      if (this.selected === "all") {
-        url = urlServer.ApiUrl + "/history/content/10/";
+      let url = '';
+      if (this.selected === 'all') {
+        url = urlServer.ApiUrl + '/history/content/10/';
       } else {
-        url = urlServer.ApiUrl + "/data/" + this.type + "/10/";
+        url = urlServer.ApiUrl + '/data/' + this.type + '/10/';
       }
       this.$ajax
         .get(url + page)
         .then(res => {
           if (!res.data.error) {
             let data = res.data.results,
-              str = "";
+              str = '';
             if (data.length) {
-              if (this.selected === "all") {
+              if (this.selected === 'all') {
                 $(data).each(function(i, v) {
                   str = v.content;
                   str = str.substring(
-                    str.indexOf("src=") + 4,
-                    str.indexOf("/>")
+                    str.indexOf('src=') + 4,
+                    str.indexOf('/>')
                   );
                   v.img = str;
                 });
@@ -114,10 +114,10 @@ export default {
         });
     },
     /**
-			 * [loadBottom description]加载更多
-			 * @param  {[type]} id [description]
-			 * @return {[type]}    [description]
-			 */
+     * [loadBottom description]加载更多
+     * @param  {[type]} id [description]
+     * @return {[type]}    [description]
+     */
     loadBottom() {
       setTimeout(() => {
         this.getList(++this.page, this.type);
@@ -153,5 +153,5 @@ export default {
 </template>
 
 <style scoped>
-@import "../../css/index.css";
+@import '../../css/index.css';
 </style>

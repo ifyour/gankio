@@ -1,11 +1,11 @@
 <script>
-	export default{
-		props:{
-			contentlist:{
-				type:Array
-			}
-		},
-	}
+export default {
+  props: {
+    contentlist: {
+      type: Array
+    }
+  }
+};
 </script>
 
 <template>

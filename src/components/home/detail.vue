@@ -1,18 +1,18 @@
 <script>
-import urlServer from "base/ajaxUrl";
-import tool from "base/tool";
-import { Header, Button, Toast, Indicator } from "mint-ui";
+import urlServer from 'base/ajaxUrl';
+import tool from 'base/tool';
+import { Header, Button, Toast, Indicator } from 'mint-ui';
 export default {
-  name: "detail",
+  name: 'detail',
   data() {
     return {
-      topTitle: "",
+      topTitle: '',
       infoList: {}
     };
   },
   components: {
-    "mt-header": Header,
-    "mt-button": Button
+    'mt-header': Header,
+    'mt-button': Button
   },
   mounted() {
     this.topTitle = this.$route.query.title;
@@ -20,18 +20,18 @@ export default {
   },
   methods: {
     /**
-			 * [getList description]获取列表数据
-			 * @return {[type]} [description]
-			 */
+     * [getList description]获取列表数据
+     * @return {[type]} [description]
+     */
     getInfo() {
       Indicator.open({
-        text: "加载中...",
-        spinnerType: "fading-circle"
+        text: '加载中...',
+        spinnerType: 'fading-circle'
       });
       let str = this.$route.query.time,
-        arr = str.split("-");
+        arr = str.split('-');
       this.$ajax
-        .get(urlServer.ApiUrl + "/day/" + arr[0] + "/" + arr[1] + "/" + arr[2])
+        .get(urlServer.ApiUrl + '/day/' + arr[0] + '/' + arr[1] + '/' + arr[2])
         .then(res => {
           if (!res.data.error) {
             if (res.data.results) {
@@ -77,5 +77,5 @@ export default {
 </template>
 
 <style scoped>
-@import "../../css/index.css";
+@import '../../css/index.css';
 </style>

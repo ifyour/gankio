@@ -1,212 +1,208 @@
 @charset "utf-8";
-@import "../../node_modules/mixins-sass/src/mixins";
+@import '../../node_modules/mixins-sass/src/mixins';
 
 /**
  * [flexbox description] css3伸缩盒
  * @return {[type]} [description]
  */
 @mixin flexbox() {
-	display: box;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: flex;
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
 }
-
 
 /**
  * [hc description] 水平居中
  * @return {[type]} [description]
  */
 @mixin flex-hc() {
-	/* 09版 */
-	-webkit-box-pack: center;
-	-webkit-box-align: center;
-	/* 12版 */
-	-webkit-justify-content: center;
-	-moz-justify-content: center;
-	-ms-justify-content: center;
-	-o-justify-content: center;
-	justify-content: center;
+  /* 09版 */
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /* 12版 */
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
 }
-
 
 /**
  * [vc description] 垂直居中
  * @return {[type]} [description]
  */
 @mixin flex-vc() {
-	/* 09版 */
-	-webkit-box-align: center;
-	/* 12版 */
-	-webkit-align-items: center;
-	-moz-align-items: center;
-	-ms-align-items: center;
-	-o-align-items: center;
-	align-items: center;
+  /* 09版 */
+  -webkit-box-align: center;
+  /* 12版 */
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
 }
-
 
 /**
  * [between description] 两端对齐
  * @return {[type]} [description]
  */
 @mixin flex-between() {
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	-moz-box-pack: justify;
-	-moz-justify-content: space-between;
-	-o-box-pack: justify;
-	-o-justify-content: space-between;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -moz-justify-content: space-between;
+  -o-box-pack: justify;
+  -o-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
-
 
 /**
  * [between description] 两端对齐
  * @return {[type]} [description]
  */
 @mixin flex-around() {
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-around;
-	-moz-box-pack: justify;
-	-moz-justify-content: space-around;
-	-o-box-pack: justify;
-	-o-justify-content: space-around;
-	-ms-flex-pack: justify;
-	justify-content: space-around;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-around;
+  -moz-box-pack: justify;
+  -moz-justify-content: space-around;
+  -o-box-pack: justify;
+  -o-justify-content: space-around;
+  -ms-flex-pack: justify;
+  justify-content: space-around;
 }
 
 .nav_wrap {
-	position: fixed;
-	@include rem(top, 90px);
-	left: 0;
-	z-index: 999;
-	width: 100%;
-	@include rem(height, 80px);
-	.top_nav {
-		background-color: #EC6149;
-		color: #ffaea0;
-		overflow-x: scroll;
-		overflow-y: hidden;
-		white-space: nowrap;
-		&::-webkit-scrollbar {
-			display: none;
-		}
-		.tab_item {
-			display: inline-block;
-			@include rem(line-height, 80px);
-			@include rem(padding, 0 30px);
-			@include rem(font-size, 26px);
-			&.active {
-				color: #fff;
-				@include rem(border-bottom, 5px solid #c83d25);
-			}
-		}
-	}
+  position: fixed;
+  @include rem(top, 90px);
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  @include rem(height, 80px);
+  .top_nav {
+    background-color: #ec6149;
+    color: #ffaea0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .tab_item {
+      display: inline-block;
+      @include rem(line-height, 80px);
+      @include rem(padding, 0 30px);
+      @include rem(font-size, 26px);
+      &.active {
+        color: #fff;
+        @include rem(border-bottom, 5px solid #c83d25);
+      }
+    }
+  }
 }
 
 .content_wrap {
-	@include rem(margin-top, 170px);
-	background-color: #f5f5f5;
-	.list_item {
-		background-color: #fff;
-		@include rem(margin-bottom, 20px);
-		@include rem(padding, 24px);
-		.list_block {
-			display: block;
-		}
-		.list_img {
-			width: 100%;
-		}
-	}
-	.list_title {
-		@include rem(font-size, 36px);
-		color: #000;
-		@include rem(margin-bottom, 5px);
-	}
-	.title_block {
-		@include rem(font-size, 36px);
-		@include rem(margin-bottom, 20px);
-		color: #000;
-	}
-	.list_info {
-		@include rem(margin-bottom, 20px);
-		@include rem(font-size, 26px);
-		color: #bbb;
-	}
-	.img_box {
-		width: 100%;
-		@include rem(height, 300px);
-		@include rem(margin-bottom, 20px);
-		overflow: hidden;
-		@include flexbox();
-		@include flex-vc();
-		.info_img {
-			width: 100%;
-		}
-	}
-	.img_fl {
-		width: 100%;
-		@include rem(margin-bottom, 30px);
-	}
+  @include rem(margin-top, 170px);
+  background-color: #f5f5f5;
+  .list_item {
+    background-color: #fff;
+    @include rem(margin-bottom, 20px);
+    @include rem(padding, 24px);
+    .list_block {
+      display: block;
+    }
+    .list_img {
+      width: 100%;
+    }
+  }
+  .list_title {
+    @include rem(font-size, 36px);
+    color: #000;
+    @include rem(margin-bottom, 5px);
+  }
+  .title_block {
+    @include rem(font-size, 36px);
+    @include rem(margin-bottom, 20px);
+    color: #000;
+  }
+  .list_info {
+    @include rem(margin-bottom, 20px);
+    @include rem(font-size, 26px);
+    color: #bbb;
+  }
+  .img_box {
+    width: 100%;
+    @include rem(height, 300px);
+    @include rem(margin-bottom, 20px);
+    overflow: hidden;
+    @include flexbox();
+    @include flex-vc();
+    .info_img {
+      width: 100%;
+    }
+  }
+  .img_fl {
+    width: 100%;
+    @include rem(margin-bottom, 30px);
+  }
 }
 
 .detail_page {
-	background-color: #f5f5f5;
-	.content_wrap {
-		@include rem(margin-top, 90px);
-		background-color: #fff;
-		.detail_img {
-			width: 100%;
-		}
-		.list_wrap {
-			@include rem(margin-top, 60px);
-			@include rem(padding, 0 24px);
-		}
-		.info_type {
-			@include rem(font-size, 46px);
-			font-weight: bold;
-			@include rem(margin-bottom, 20px);
-		}
-		.info_list {
-			@include rem(margin-bottom, 10px);
-			@include rem(padding-left, 20px);
-			&::before {
-				display: block;
-				position: relative;
-				@include rem(left, -20px);
-				@include rem(top, 28px);
-				@include rem(width, 8px);
-				@include rem(height, 8px);
-				background-color: #222;
-				border-radius: 100%;
-				content: '';
-			}
-			.title {
-				@include rem(font-size, 32px);
-				color: #4183c4;
-			}
-			.auther {
-				@include rem(font-size, 22px);
-				color: #ccc;
-				@include rem(padding-left, 10px);
-			}
-			.list_img {
-				width: 100%;
-				@include rem(height, 300px);
-				@include rem(margin-top, 20px);
-				@include rem(margin-bottom, 20px);
-				overflow: hidden;
-				@include flexbox();
-				@include flex-vc();
-				img {
-					width: 100%;
-				}
-			}
-		}
-	}
+  background-color: #f5f5f5;
+  .content_wrap {
+    @include rem(margin-top, 90px);
+    background-color: #fff;
+    .detail_img {
+      width: 100%;
+    }
+    .list_wrap {
+      @include rem(margin-top, 60px);
+      @include rem(padding, 0 24px);
+    }
+    .info_type {
+      @include rem(font-size, 46px);
+      font-weight: bold;
+      @include rem(margin-bottom, 20px);
+    }
+    .info_list {
+      @include rem(margin-bottom, 10px);
+      @include rem(padding-left, 20px);
+      &::before {
+        display: block;
+        position: relative;
+        @include rem(left, -20px);
+        @include rem(top, 28px);
+        @include rem(width, 8px);
+        @include rem(height, 8px);
+        background-color: #222;
+        border-radius: 100%;
+        content: '';
+      }
+      .title {
+        @include rem(font-size, 32px);
+        color: #4183c4;
+      }
+      .auther {
+        @include rem(font-size, 22px);
+        color: #ccc;
+        @include rem(padding-left, 10px);
+      }
+      .list_img {
+        width: 100%;
+        @include rem(height, 300px);
+        @include rem(margin-top, 20px);
+        @include rem(margin-bottom, 20px);
+        overflow: hidden;
+        @include flexbox();
+        @include flex-vc();
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

@@ -7,9 +7,9 @@ export default {
   },
   methods: {
     toDetail(time, title) {
-      let t = time.substring(0, time.indexOf("T"));
-      let til = title.replace("今日力推：", "");
-      this.$router.push({ name: "detail", query: { time: t, title: til } });
+      let t = time.substring(0, time.indexOf('T'));
+      let til = title.replace('今日力推：', '');
+      this.$router.push({ name: 'detail', query: { time: t, title: til } });
     }
   }
 };

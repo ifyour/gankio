@@ -3,6 +3,6 @@
  * @type {Object}
  */
 const urlServer = {
-	ApiUrl: 'http://gank.io/api',
-}
+  ApiUrl: 'http://gank.io/api'
+};
 export default urlServer;
