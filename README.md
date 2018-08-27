@@ -15,7 +15,7 @@
 
 ```bash
 # 安装依赖
-npm install
+$ npm install
 
 # 开发
 $ npm run dev
