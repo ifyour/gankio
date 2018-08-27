@@ -15,11 +15,11 @@
 
 ```bash
 # 安装依赖
-$ yarn
+npm install
 
 # 开发
-$ gulp dev
+$ npm run dev
 
-# 发布
-$ gulp
+# 构建
+$ npm run build
 ```
